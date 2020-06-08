@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <audio id = "better-days" src = "bensound-betterdays.mp3" preload ="auto"   ></audio>
+      </a-assets>
+
+      <a-plane class = "detectable" position = "0 1 -2" color = "blue" sound = "src : #better-days; autoplay : false; on: click;">
+        
+      </a-plane>
+    
+    <a-camera position = "0 1.6 0">
+      <a-cursor raycaster = "objects: .detectable"
+        event-set__mouseenter = "scale : 3 3 1"
+        event-set__mouseleave = "scale : 1 1 1"
+        >
+      </a-cursor>
+    </a-camera>
+
+</a-scene>
+    <script src="script.js"></script>
+  </body>
+</html>
